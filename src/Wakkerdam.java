@@ -21,7 +21,7 @@ public class Wakkerdam
 		persons.add(new Person("Anke", Gender.WOMAN ,Age.OLD));
 		persons.add(new Person("Mimi", Gender.WOMAN ,Age.YOUNG));
 		
-		Village village = new Village(20);
+		Village village = new Village(10);
 		
 		for(int i = 0; i < village.getSize(); i++)
 		{

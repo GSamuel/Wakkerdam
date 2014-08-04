@@ -59,4 +59,9 @@ public class Person
 	{
 		return new Person(name, gender, age);
 	}
+	
+	public String toString()
+	{
+		return this.name+" "+ this.gender+" "+this.age+" "+this.card;
+	}
 }

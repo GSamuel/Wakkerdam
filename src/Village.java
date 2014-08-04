@@ -1,21 +1,37 @@
+import java.util.Random;
 import java.util.Vector;
 
+import character.Card;
 import character.Person;
 
 
 public class Village
 {
+	private Random rand = new Random();
 	private int size;
 	private Vector<Person> village;
+	private Deck deck;
 	
 	public Village(int size)
 	{
 		this.size = size;
 		village = new Vector<Person>();
+		initDeck();
+	}
+	
+	private void initDeck()
+	{		
+		deck = new Deck();
+		deck.addCard(Card.HUMAN, 6);
+		deck.addCard(Card.WEREWOLF, 2);
+		deck.addCard(Card.CLAIRVOYANT);
+		deck.addCard(Card.HUNTER);
+		deck.shuffle();		
 	}
 	
 	public void addPerson(Person person)
 	{
+		person.setCard(deck.drawCard());
 		village.add(person);
 	}
 	
