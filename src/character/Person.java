@@ -1,6 +1,6 @@
 package character;
 
-public class Character
+public class Person
 {
 	private String name;
 	private Gender gender;
@@ -10,7 +10,7 @@ public class Character
 	
 	private Race race;
 	
-	public Character(String name, Gender gender, Age age)
+	public Person(String name, Gender gender, Age age)
 	{
 		this.name = name;
 		this.gender = gender;
@@ -53,5 +53,10 @@ public class Character
 	public void setRace(Race race)
 	{
 		this.race = race;
+	}
+	
+	public Person clone()
+	{
+		return new Person(name, gender, age);
 	}
 }
