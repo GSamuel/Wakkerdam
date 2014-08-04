@@ -1,6 +1,6 @@
 package card;
 
-public enum Card
+public abstract class Card
 {
-	HUMAN, WEREWOLF, CLAIRVOYANT, WITCH, SLUT, HUNTER, CUPID, HEALER,
+
 }
