@@ -1,6 +1,6 @@
 package ability;
 
-public class Human extends Ability
+public class HumanAbility extends Ability
 {
 
 	@Override

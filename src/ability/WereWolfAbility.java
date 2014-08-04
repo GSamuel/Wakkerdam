@@ -1,6 +1,6 @@
 package ability;
 
-public class WereWolf extends Ability
+public class WereWolfAbility extends Ability
 {
 	@Override
 	public void nightStarted()
