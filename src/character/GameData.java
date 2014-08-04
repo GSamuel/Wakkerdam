@@ -9,7 +9,7 @@ public class GameData
 	
 	public GameData()
 	{
-		this.card = CardChooser.HUMAN.get();
+		this.card = CardChooser.HUMAN.get(); //Sets card standard on Human
 	}
 	
 	public Card getCard()

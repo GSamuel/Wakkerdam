@@ -6,6 +6,12 @@ public enum CardChooser
 
 	public Card get()
 	{
-		return new HumanCard();
+		switch (this)
+		{
+		case WEREWOLF:
+			return new WereWolfCard();
+		default:
+			return new HumanCard();
+		}
 	}
 }
