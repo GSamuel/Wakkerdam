@@ -28,7 +28,7 @@ public class Village
 
 	public void addPerson(Person person)
 	{
-		person.setCard(deck.drawCard());
+		person.getGameData().setCard(deck.drawCard());
 		village.add(person);
 	}
 

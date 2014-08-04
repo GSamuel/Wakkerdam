@@ -6,6 +6,6 @@ public enum CardChooser
 
 	public Card get()
 	{
-		return new Human();
+		return new HumanCard();
 	}
 }

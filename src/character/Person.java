@@ -1,32 +1,24 @@
 package character;
 
-import card.Card;
-import card.CardChooser;
-
 public class Person
 {
 	private PersonalData personalData;
-	private Card card;
+	private GameData gameData;
 
 	public Person(PersonalData personalData)
 	{
 		this.personalData = personalData;
-		this.card = CardChooser.HUMAN.get();
+		this.gameData = new GameData();
 	}
 
-	public Card getCard()
-	{
-		return card;
-	}
-
-	public void setCard(Card card)
-	{
-		this.card = card;
-	}
-	
 	public String toString()
 	{
 		return personalData.toString();
 	}
 	
+	public GameData getGameData()
+	{
+		return gameData;
+	}
+
 }
