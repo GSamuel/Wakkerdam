@@ -1,5 +1,7 @@
 package character;
 
+import card.Card;
+
 public class Person
 {
 	private String name;

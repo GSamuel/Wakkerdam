@@ -1,7 +1,7 @@
 import java.util.Collections;
 import java.util.Vector;
 
-import character.Card;
+import card.Card;
 
 
 public class Deck

@@ -1,13 +1,11 @@
-import java.util.Random;
 import java.util.Vector;
 
-import character.Card;
+import card.Card;
 import character.Person;
 
 
 public class Village
 {
-	private Random rand = new Random();
 	private int size;
 	private Vector<Person> village;
 	private Deck deck;
