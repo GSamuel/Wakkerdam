@@ -1,24 +1,36 @@
 package character;
 
+import other.Village;
+
+
 public class Person
 {
-	private PersonalData personalData;
-	private PersonalGameData personalGameData;
+	private PersonalData pData;
+	private PersonalGameData pGameData;
 
-	public Person(PersonalData personalData)
+	public Person(PersonalData pData)
 	{
-		this.personalData = personalData;
-		this.personalGameData = new PersonalGameData();
+		this.pData = pData;
 	}
 
 	public String toString()
 	{
-		return personalData.toString();
+		return pData.toString();
+	}
+	
+	public void setPersonalGameData(PersonalGameData pGameData)
+	{
+		this.pGameData = pGameData;
 	}
 	
 	public PersonalGameData getPersonalGameData()
 	{
-		return personalGameData;
+		return pGameData;
+	}
+	
+	public boolean execute(Village village)
+	{
+		return pGameData.execute(village);
 	}
 
 }

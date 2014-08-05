@@ -1,15 +1,29 @@
 package character;
 
+import java.util.Vector;
+
+import other.Village;
 import card.Card;
-import card.CardChooser;
 
 public class PersonalGameData
 {
+	private int gameID = -1;
 	private Card card;
 	
-	public PersonalGameData()
+	public PersonalGameData(Card card, int gameID)
 	{
-		this.card = CardChooser.HUMAN.get(); //Sets card standard on Human
+		this.card = card;
+		this.gameID = gameID;
+	}
+	
+	public int getGameID()
+	{
+		return gameID;
+	}
+	
+	public void setGameID(int gameID)
+	{
+		this.gameID = gameID;
 	}
 	
 	public Card getCard()
@@ -20,5 +34,10 @@ public class PersonalGameData
 	public void setCard(Card card)
 	{
 		this.card = card;
+	}
+
+	public boolean execute(Village village)
+	{
+		return true;
 	}
 }

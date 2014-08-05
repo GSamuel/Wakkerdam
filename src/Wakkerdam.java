@@ -1,6 +1,7 @@
 import java.util.Random;
 import java.util.Vector;
 
+import other.Village;
 import character.Age;
 import character.Gender;
 import character.Person;
