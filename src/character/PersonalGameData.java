@@ -1,7 +1,5 @@
 package character;
 
-import java.util.Vector;
-
 import other.Village;
 import card.Card;
 
@@ -38,6 +36,6 @@ public class PersonalGameData
 
 	public boolean execute(Village village)
 	{
-		return true;
+		return card.getAbility().execute(village);
 	}
 }

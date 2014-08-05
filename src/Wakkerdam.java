@@ -28,6 +28,9 @@ public class Wakkerdam
 		{
 			village.addPerson(new Person(persons.get(rand.nextInt(persons.size()))));
 		}
+		
+		village.prepareGame();
+		village.execute();
 
 	}
 
