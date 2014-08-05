@@ -14,9 +14,7 @@ public class WereWolfNight extends GameEvent
 	@Override
 	public boolean isLegalVote(Village village, Vote vote)
 	{	
-		System.out.println("legalVote: "+(village.getPersonWithID(vote.getSource()).getPersonalGameData().getCard().getCardName() == CardChooser.WEREWOLF && village.getPersonWithID(vote.getTarget()).getPersonalGameData().getCard().getCardName() != CardChooser.WEREWOLF));
-		return (village.getPersonWithID(vote.getSource()).getPersonalGameData().getCard().getCardName() == CardChooser.WEREWOLF && village.getPersonWithID(vote.getTarget()).getPersonalGameData().getCard().getCardName() != CardChooser.WEREWOLF);
-	
+		return (village.getPersonWithID(vote.getSource()).getCard().getCardName() == CardChooser.WEREWOLF && village.getPersonWithID(vote.getTarget()).getCard().getCardName() != CardChooser.WEREWOLF);
 	}
 
 	@Override

@@ -1,7 +1,6 @@
 package other;
-import java.util.Vector;
-
 import card.CardChooser;
+import character.People;
 import character.Person;
 import character.PersonalGameData;
 import event.EventChooser;
@@ -11,17 +10,18 @@ import event.Vote;
 public class Village
 {
 	private int size;
-	private Vector<Person> village;
 	private Deck deck;
 	private EventManager eventManager;
 	
 	private boolean isDay;
 	private int cycle;
+	
+	private People village;
 
 	public Village(int size)
 	{
 		this.size = size;
-		village = new Vector<Person>();
+		village = new People();
 		initDeck();
 	}
 
@@ -37,7 +37,7 @@ public class Village
 
 	public void addPerson(Person person)
 	{
-		village.add(person);
+		village.addPerson(person);
 	}
 
 	public void prepareGame()
@@ -65,8 +65,6 @@ public class Village
 		for (int i = 0; i < village.size(); i++)
 			village.get(i).execute(this);
 		
-
-		
 		if(isDay)
 			cycle++;
 		isDay = !isDay;
@@ -74,16 +72,11 @@ public class Village
 	
 	public Person getPersonWithID(int id)
 	{
-		for (Person p : village)
-		{
-			if(p.getPersonalGameData().getGameID() == id)
-				return p;
-		}
-		return null;
+		return village.getPersonWithID(id);
 			
 	}
 	
-	public Vector<Person> getPeople()
+	public People getPeople()
 	{
 		return village;
 	}

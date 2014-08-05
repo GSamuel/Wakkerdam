@@ -1,5 +1,6 @@
 package character;
 
+import card.Card;
 import other.Village;
 
 
@@ -18,14 +19,39 @@ public class Person
 		return pData.toString();
 	}
 	
-	public void setPersonalGameData(PersonalGameData pGameData)
+	public String getName()
 	{
-		this.pGameData = pGameData;
+		return pData.getName();
+	}
+	
+	public Gender getGender()
+	{
+		return pData.getGender();
+	}
+		
+	public Age getAge()
+	{
+		return pData.getAge();
+	}
+	
+	public int getGameID()
+	{
+		return pGameData.getGameID();
+	}
+	
+	public Card getCard()
+	{
+		return pGameData.getCard();
 	}
 	
 	public PersonalGameData getPersonalGameData()
 	{
 		return pGameData;
+	}
+	
+	public void setPersonalGameData(PersonalGameData pGameData)
+	{
+		this.pGameData = pGameData;
 	}
 	
 	public boolean execute(Village village)
