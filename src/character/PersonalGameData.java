@@ -3,11 +3,11 @@ package character;
 import card.Card;
 import card.CardChooser;
 
-public class GameData
+public class PersonalGameData
 {
 	private Card card;
 	
-	public GameData()
+	public PersonalGameData()
 	{
 		this.card = CardChooser.HUMAN.get(); //Sets card standard on Human
 	}

@@ -3,12 +3,12 @@ package character;
 public class Person
 {
 	private PersonalData personalData;
-	private GameData gameData;
+	private PersonalGameData personalGameData;
 
 	public Person(PersonalData personalData)
 	{
 		this.personalData = personalData;
-		this.gameData = new GameData();
+		this.personalGameData = new PersonalGameData();
 	}
 
 	public String toString()
@@ -16,9 +16,9 @@ public class Person
 		return personalData.toString();
 	}
 	
-	public GameData getGameData()
+	public PersonalGameData getPersonalGameData()
 	{
-		return gameData;
+		return personalGameData;
 	}
 
 }
