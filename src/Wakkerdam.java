@@ -1,6 +1,7 @@
 import java.util.Random;
 import java.util.Vector;
 
+import other.SimpleInput;
 import other.Village;
 import character.Age;
 import character.Gender;
@@ -10,7 +11,7 @@ import character.PersonalData;
 public class Wakkerdam
 {
 	public static void main(String[] args)
-	{
+	{		
 		Random rand = new Random();
 
 		Vector<PersonalData> persons = new Vector<PersonalData>();

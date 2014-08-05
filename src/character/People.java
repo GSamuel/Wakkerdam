@@ -15,13 +15,8 @@ public class People
 	{
 		people.add(person);
 	}
-
-	public Person get(int index)
-	{
-		return people.get(index);
-	}
 	
-	public Person getPersonWithID(int id)
+	public Person getPerson(int id)
 	{
 		for(Person p : people)
 			if(p.getGameID() == id)

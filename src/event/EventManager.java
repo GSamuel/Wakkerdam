@@ -2,6 +2,7 @@ package event;
 
 import java.util.Vector;
 
+import other.SimpleInput;
 import other.Village;
 
 public class EventManager
@@ -11,6 +12,9 @@ public class EventManager
 
 	public EventManager(Village village)
 	{
+		SimpleInput input = new SimpleInput(this);
+		input.setVisible(true);
+		
 		this.village = village;
 		gameEvents = new Vector<GameEvent>();
 	}

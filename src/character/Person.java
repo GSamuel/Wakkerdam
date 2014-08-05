@@ -13,6 +13,16 @@ public class Person
 	{
 		this.pData = pData;
 	}
+	
+	public void isAlive(boolean alive)
+	{
+		pGameData.isAlive(alive);
+	}
+	
+	public boolean isAlive()
+	{
+		return pGameData.isAlive();
+	}
 
 	public String toString()
 	{

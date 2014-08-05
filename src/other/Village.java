@@ -44,7 +44,7 @@ public class Village
 	{
 		initDeck();
 		for (int i = 0; i < village.size(); i++)
-			village.get(i).setPersonalGameData(
+			village.getPeople().get(i).setPersonalGameData(
 					new PersonalGameData(deck.drawCard(), i));
 		
 		eventManager = new EventManager(this);
@@ -63,7 +63,7 @@ public class Village
 	public void execute()
 	{
 		for (int i = 0; i < village.size(); i++)
-			village.get(i).execute(this);
+			village.getPeople().get(i).execute(this);
 		
 		if(isDay)
 			cycle++;
@@ -72,7 +72,7 @@ public class Village
 	
 	public Person getPersonWithID(int id)
 	{
-		return village.getPersonWithID(id);
+		return village.getPerson(id);
 			
 	}
 	
