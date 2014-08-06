@@ -11,7 +11,7 @@ public abstract class GameEvent implements Comparable<GameEvent>
 	protected int maxDuration;
 	private boolean started;
 	protected EventChooser eventName;
-	protected Vector<Vote> votes;
+	protected VoteCounter voteCounter;
 	
 	private boolean eventDone;
 	
@@ -19,7 +19,7 @@ public abstract class GameEvent implements Comparable<GameEvent>
 	{
 		started = false;
 		eventDone = false;
-		votes = new Vector<Vote>();
+		voteCounter = new VoteCounter();
 	}
 	
 	public boolean eventDone()
@@ -54,7 +54,9 @@ public abstract class GameEvent implements Comparable<GameEvent>
 	{
 		if(started && !eventDone)
 		if(isLegalVote(village, vote))
-			votes.add(vote);
+		{
+			voteCounter.addVote(vote);
+		}
 	}
 	
 	public void update(Village village)
@@ -71,7 +73,7 @@ public abstract class GameEvent implements Comparable<GameEvent>
 		started = false;
 		eventDone = false;
 		eventDone = false;
-		votes.clear();
+		voteCounter.clear();
 		start();
 	}
 	

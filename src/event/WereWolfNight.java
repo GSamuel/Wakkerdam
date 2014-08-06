@@ -1,10 +1,5 @@
 package event;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map.Entry;
-import java.util.Vector;
-
 import other.Village;
 import card.CardChooser;
 
@@ -28,64 +23,17 @@ public class WereWolfNight extends GameEvent
 	@Override
 	public void processEvent(Village village)
 	{
-		Vector<Vote> goodVotes = new Vector<Vote>();
-		
-		for (int i = 0; i < votes.size(); i++)
-		{
-			boolean doubleVote = false;
-			for (int j = i + 1; j < votes.size(); j++)
-			{
-				if (votes.get(i).getSource() == votes.get(j).getSource())
-				{
-					doubleVote = true;
-				}
-			}
-			if(!doubleVote)
-				goodVotes.add(votes.get(i));
-				
-		}
-		System.out.println("amount of good votes: "+ goodVotes.size());
 
-		HashMap<Integer, Integer> voteMap = new HashMap<Integer, Integer>();
-
-		for (Vote v : goodVotes)
+		if (voteCounter.getAmountFilteredVotes() > 0)
 		{
-			if (voteMap.containsKey(v.getTarget()))
-				voteMap.put(v.getTarget(), voteMap.get(v.getTarget()) + 1);
-			else
-				voteMap.put(v.getTarget(), 1);
+			village.getPersonWithID(voteCounter.getWinner()).isAlive(false);
+			System.out.println("Someone died: " + voteCounter.getWinner());
+			System.out.println("voteCounter says it was: "
+					+ voteCounter.getWinner());
 		}
-		
-		System.out.println(voteMap);
-		
-		Iterator<Entry<Integer, Integer>> it = voteMap.entrySet().iterator();
 
-		int highestKey = 0;
-		int highestVotes = 0;
-		
-		while(it.hasNext())
-		{
-			Entry<Integer, Integer> entry = it.next();
-			
-			if(entry.getValue() >  highestVotes)
-			{
-				highestVotes = entry.getValue();
-				highestKey = entry.getKey();
-			}
-		}
-		
-		if(highestVotes > 0)
-		{
-			village.getPersonWithID(highestKey).isAlive(false);
-			System.out.println("Someone died: "+highestKey);
-		}
-		
-		System.out.println("event over: "+eventName);
-		
-		
+		System.out.println("event over: " + eventName);
 
-		votes.clear();
-		goodVotes.clear();
 		reset();
 	}
 
