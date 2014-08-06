@@ -24,15 +24,14 @@ public class WereWolfNight extends GameEvent
 	public void processEvent(Village village)
 	{
 
+		System.out.println("event over: " + eventName);
+
 		if (voteCounter.getAmountFilteredVotes() > 0)
 		{
 			village.getPersonWithID(voteCounter.getWinner()).isAlive(false);
 			System.out.println("Someone died: " + voteCounter.getWinner());
-			System.out.println("voteCounter says it was: "
-					+ voteCounter.getWinner());
 		}
 
-		System.out.println("event over: " + eventName);
 
 		reset();
 	}
