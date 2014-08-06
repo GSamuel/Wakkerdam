@@ -1,7 +1,5 @@
 package event;
 
-import java.util.Vector;
-
 import other.Village;
 
 

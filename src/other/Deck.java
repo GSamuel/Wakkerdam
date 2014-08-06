@@ -11,6 +11,7 @@ public class Deck
 	private Vector<Card> deck;
 	private Vector<Card> shuffled;
 	private Vector<Card> drawn;
+	
 	public Deck()
 	{
 		deck = new Vector<Card>();
