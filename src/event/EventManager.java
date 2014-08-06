@@ -35,4 +35,10 @@ public class EventManager
 		gameEvents.add(event);
 		// Collections.sort(gameEvents);
 	}
+
+	public void update()
+	{
+		if(gameEvents.size() > 0)
+			gameEvents.get(0).update(village);
+	}
 }

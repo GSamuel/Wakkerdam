@@ -8,7 +8,7 @@ public class WereWolfNight extends GameEvent
 
 	public WereWolfNight()
 	{
-		maxDuration = 5000;
+		maxDuration = 15000;
 	}
 	
 	@Override
@@ -22,7 +22,12 @@ public class WereWolfNight extends GameEvent
 	public void processEvent(Village village)
 	{
 		for(Vote v: votes)
+		{
 			village.getPersonWithID(v.getTarget()).isAlive(false);
+			System.out.println("someone died");
+		}
+
+		votes.clear();
 	}
 
 }

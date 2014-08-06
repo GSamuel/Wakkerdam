@@ -13,13 +13,21 @@ public abstract class GameEvent implements Comparable<GameEvent>
 	private EventChooser eventName;
 	protected Vector<Vote> votes;
 	
+	private boolean eventDone;
+	
 	public GameEvent()
 	{
 		started = false;
+		eventDone = false;
 		votes = new Vector<Vote>();
 	}
 	
 	public boolean eventDone()
+	{
+		return eventDone;
+	}
+	
+	public boolean timeOver()
 	{
 		return ((System.currentTimeMillis() - startTime) > maxDuration && started);
 	}
@@ -33,7 +41,7 @@ public abstract class GameEvent implements Comparable<GameEvent>
 	public void stop()
 	{
 		if(started)
-			maxDuration = 0;
+			eventDone = true;
 	}
 	
 	public EventChooser getEventName()
@@ -47,10 +55,13 @@ public abstract class GameEvent implements Comparable<GameEvent>
 			votes.add(vote);
 	}
 	
-	public void stopAndProcessEvent(Village village)
+	public void update(Village village)
 	{
-		maxDuration = 0;
-		processEvent(village);
+		if(!eventDone)
+			eventDone = timeOver();
+		
+		if(eventDone)
+			processEvent(village);
 	}
 	
 	public abstract boolean isLegalVote(Village village, Vote vote);

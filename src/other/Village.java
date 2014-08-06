@@ -64,6 +64,11 @@ public class Village
 		isDay = !isDay;
 	}
 	
+	public void update()
+	{
+		eventManager.update();
+	}
+	
 	public Person getPersonWithID(int id)
 	{
 		return village.getPerson(id);

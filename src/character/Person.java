@@ -1,10 +1,12 @@
 package character;
 
+import java.util.Observable;
+
 import card.Card;
 import other.Village;
 
 
-public class Person
+public class Person extends Observable
 {
 	private PersonalData pData;
 	private PersonalGameData pGameData;
@@ -17,6 +19,8 @@ public class Person
 	public void isAlive(boolean alive)
 	{
 		pGameData.isAlive(alive);
+		this.setChanged();
+		this.notifyObservers();
 	}
 	
 	public boolean isAlive()

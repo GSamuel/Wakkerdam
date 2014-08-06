@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,7 +15,7 @@ import javax.swing.JTable;
 import character.Person;
 import event.Vote;
 
-public class SimpelPersonFrame extends JFrame
+public class SimpelPersonFrame extends JFrame implements Observer
 {
 	private final Person person;
 	private VoteController voteController;
@@ -28,12 +30,13 @@ public class SimpelPersonFrame extends JFrame
 	public SimpelPersonFrame(Person person)
 	{
 		this.person = person;
+		person.addObserver(this);
 
 		setTitle(person.getName());
 		setSize(WIDTH, HEIGHT);
 		setLocation(person.getGameID() % COLUMNS * WIDTH, person.getGameID()
 				/ COLUMNS * HEIGHT);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		setLayout(new BorderLayout());
 
 		JPanel panel = new JPanel();
@@ -51,6 +54,7 @@ public class SimpelPersonFrame extends JFrame
 		panel.add(vote);
 		
 		initButtons();
+		
 
 
 		update();
@@ -84,10 +88,19 @@ public class SimpelPersonFrame extends JFrame
 		table.setValueAt("age: "+person.getAge(), 1,1);
 		table.setValueAt("Character: " + person.getCard().getCardName(), 2, 0);
 		table.setValueAt("still alive: " + person.isAlive(), 2,1);
+		
+		if(!person.isAlive())
+			this.setVisible(false);
 	}
 	
 	public void setVoteController(VoteController voteController)
 	{
 		this.voteController = voteController;
+	}
+
+	@Override
+	public void update(Observable arg0, Object arg1)
+	{
+		update();
 	}
 }
