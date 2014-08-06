@@ -1,8 +1,8 @@
 import java.util.Random;
 import java.util.Vector;
 
-import other.SimpleInput;
 import other.Village;
+import other.VillageView;
 import character.Age;
 import character.Gender;
 import character.Person;
@@ -32,6 +32,8 @@ public class Wakkerdam
 		
 		village.prepareGame();
 		village.execute();
+		
+		VillageView view = new VillageView(village);
 
 	}
 
