@@ -33,9 +33,9 @@ public class Wakkerdam
 		}
 		
 		village.prepareGame();
-		village.execute();
+		//village.execute();
 		
-		VillageView view = new VillageView(village);
+		new VillageView(village).setVisible(true);
 		
 		
 		

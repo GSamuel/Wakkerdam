@@ -5,7 +5,6 @@ import character.Person;
 import character.PersonalGameData;
 import event.EventChooser;
 import event.EventManager;
-import event.Vote;
 
 public class Village
 {
@@ -50,11 +49,6 @@ public class Village
 		eventManager = new EventManager(this);
 		eventManager.addEvent(EventChooser.WEREWOLF_NIGHT.get());
 		eventManager.start();
-		eventManager.vote(new Vote(0,2));
-		eventManager.vote(new Vote(1,2));
-		eventManager.vote(new Vote(3,2));
-		eventManager.vote(new Vote(4,2));
-		eventManager.vote(new Vote(5,2));
 		cycle = 1;
 		isDay = false;
 
@@ -79,6 +73,11 @@ public class Village
 	public People getPeople()
 	{
 		return village;
+	}
+	
+	public EventManager getEventManager()
+	{
+		return eventManager;
 	}
 
 	public int getSize()
