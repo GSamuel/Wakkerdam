@@ -51,6 +51,7 @@ public abstract class GameEvent implements Comparable<GameEvent>
 	
 	public void vote(Village village, Vote vote)
 	{
+		if(started && !eventDone)
 		if(isLegalVote(village, vote))
 			votes.add(vote);
 	}
@@ -62,6 +63,15 @@ public abstract class GameEvent implements Comparable<GameEvent>
 		
 		if(eventDone)
 			processEvent(village);
+	}
+	
+	public void reset()
+	{
+		started = false;
+		eventDone = false;
+		eventDone = false;
+		votes.clear();
+		start();
 	}
 	
 	public abstract boolean isLegalVote(Village village, Vote vote);
