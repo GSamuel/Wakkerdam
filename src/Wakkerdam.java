@@ -24,6 +24,7 @@ public class Wakkerdam
 		persons.add(new PersonalData("Anke", Gender.WOMAN, Age.OLD));
 		persons.add(new PersonalData("Mimi", Gender.WOMAN, Age.YOUNG));
 		persons.add(new PersonalData("Barmmie", Gender.WOMAN, Age.YOUNG));
+		persons.add(new PersonalData("DogDuck", Gender.WOMAN, Age.ADULT));
 
 		Village village = new Village(10);
 
