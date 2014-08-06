@@ -47,7 +47,7 @@ public class Village
 					new PersonalGameData(deck.drawCard(), i));
 		
 		eventManager = new EventManager(this);
-		eventManager.addEvent(EventChooser.WEREWOLF_NIGHT.get());
+		//eventManager.addEvent(EventChooser.WEREWOLF_NIGHT.get());
 		eventManager.start();
 		cycle = 1;
 		isDay = false;

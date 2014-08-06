@@ -39,6 +39,19 @@ public class EventManager
 	public void update()
 	{
 		if(gameEvents.size() > 0)
-			gameEvents.get(0).update(village);
+		{
+			if(!gameEvents.get(0).hasBeenStarted())
+				gameEvents.get(0).start();
+			
+			if(gameEvents.get(0).eventDone())
+				gameEvents.remove(0);
+			else
+				gameEvents.get(0).update(village);
+		}
+		else
+		{
+			gameEvents.add(EventChooser.WEREWOLF_NIGHT.get());
+			gameEvents.add(EventChooser.DAILY_EXECUTION.get());
+		}
 	}
 }

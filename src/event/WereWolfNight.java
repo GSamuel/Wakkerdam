@@ -31,9 +31,6 @@ public class WereWolfNight extends GameEvent
 			village.getPersonWithID(voteCounter.getWinner()).isAlive(false);
 			System.out.println("Someone died: " + voteCounter.getWinner());
 		}
-
-
-		reset();
 	}
 
 }

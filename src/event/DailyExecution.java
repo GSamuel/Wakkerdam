@@ -7,7 +7,7 @@ public class DailyExecution extends GameEvent
 	public DailyExecution()
 	{
 		eventName = EventChooser.DAILY_EXECUTION;
-		maxDuration = 40000;
+		maxDuration = 30000;
 	}
 
 	@Override
@@ -25,9 +25,7 @@ public class DailyExecution extends GameEvent
 		{
 			village.getPersonWithID(voteCounter.getWinner()).isAlive(false);
 			System.out.println("Someone died: " + voteCounter.getWinner());
-		}
-		
-		reset();		
+		}	
 	}
 
 }

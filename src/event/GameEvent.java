@@ -75,6 +75,11 @@ public abstract class GameEvent implements Comparable<GameEvent>
 		start();
 	}
 	
+	public boolean hasBeenStarted()
+	{
+		return started;
+	}
+	
 	public abstract boolean isLegalVote(Village village, Vote vote);
 	
 	public abstract void processEvent(Village village);
