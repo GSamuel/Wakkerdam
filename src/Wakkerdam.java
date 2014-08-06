@@ -16,12 +16,14 @@ public class Wakkerdam
 
 		Vector<PersonalData> persons = new Vector<PersonalData>();
 		persons.add(new PersonalData("Piet", Gender.MALE, Age.ADULT));
-		persons.add(new PersonalData("Henk", Gender.MALE, Age.ADULT));
+		persons.add(new PersonalData("Henk", Gender.MALE, Age.OLD));
 		persons.add(new PersonalData("Sem", Gender.MALE, Age.YOUNG));
 		persons.add(new PersonalData("Robin", Gender.MALE, Age.OLD));
+		persons.add(new PersonalData("Elmo", Gender.MALE, Age.OLD));
 		persons.add(new PersonalData("Carla", Gender.WOMAN, Age.OLD));
 		persons.add(new PersonalData("Anke", Gender.WOMAN, Age.OLD));
 		persons.add(new PersonalData("Mimi", Gender.WOMAN, Age.YOUNG));
+		persons.add(new PersonalData("Barmmie", Gender.WOMAN, Age.YOUNG));
 
 		Village village = new Village(10);
 
@@ -34,6 +36,19 @@ public class Wakkerdam
 		village.execute();
 		
 		VillageView view = new VillageView(village);
+		
+		
+		
+		while(true)
+		{
+			try
+			{
+				Thread.sleep(10000);
+			} catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+		}
 
 	}
 
