@@ -2,7 +2,7 @@ package event;
 
 public enum EventChooser
 {
-	WEREWOLF_NIGHT;
+	WEREWOLF_NIGHT, DAILY_EXECUTION;
 
 	public GameEvent get()
 	{
@@ -11,7 +11,7 @@ public enum EventChooser
 		case WEREWOLF_NIGHT:
 			return new WereWolfNight();
 		default:
-			return new WereWolfNight();
+			return new DailyExecution();
 		}
 	}
 }
