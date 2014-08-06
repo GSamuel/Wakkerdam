@@ -13,6 +13,7 @@ public class WereWolfNight extends GameEvent
 
 	public WereWolfNight()
 	{
+		eventName = EventChooser.WEREWOLF_NIGHT;
 		maxDuration = 15000;
 	}
 
@@ -27,7 +28,6 @@ public class WereWolfNight extends GameEvent
 	@Override
 	public void processEvent(Village village)
 	{
-		System.out.println("process begins");
 		Vector<Vote> goodVotes = new Vector<Vote>();
 		
 		for (int i = 0; i < votes.size(); i++)
@@ -77,8 +77,12 @@ public class WereWolfNight extends GameEvent
 		if(highestVotes > 0)
 		{
 			village.getPersonWithID(highestKey).isAlive(false);
-			System.out.println("someone died");
+			System.out.println("Someone died: "+highestKey);
 		}
+		
+		System.out.println("event over: "+eventName);
+		
+		
 
 		votes.clear();
 		goodVotes.clear();

@@ -10,7 +10,7 @@ public abstract class GameEvent implements Comparable<GameEvent>
 	private long startTime;
 	protected int maxDuration;
 	private boolean started;
-	private EventChooser eventName;
+	protected EventChooser eventName;
 	protected Vector<Vote> votes;
 	
 	private boolean eventDone;
@@ -34,6 +34,7 @@ public abstract class GameEvent implements Comparable<GameEvent>
 	
 	public void start()
 	{
+		System.out.println("New Event started: "+eventName);
 		startTime = System.currentTimeMillis();
 		started = true;
 	}
