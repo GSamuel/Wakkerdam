@@ -2,18 +2,18 @@ package persona;
 
 public class Persona
 {
-	private Role role;
-	
 	private int gameID;
+	private Role role;
 	
 	public Persona(int gameID, Role role)
 	{
-		
+		this.gameID = gameID;
+		this.role = role;
 	}
 	
-	public void setRole(Role role)
+	public int getGameID()
 	{
-		this.role = role;
+		return gameID;
 	}
 	
 	public Role getRole()
@@ -21,8 +21,8 @@ public class Persona
 		return role;
 	}
 	
-	public int getGameID()
+	public void setRole(Role role)
 	{
-		return gameID;
+		this.role = role;
 	}
 }

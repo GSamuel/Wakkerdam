@@ -2,7 +2,7 @@ package persona;
 
 public enum Role
 {
-	HUMAN, WEREWOLF, WITCH;
+	HUMAN, WEREWOLF, WITCH, HEALER;
 
 	public String toString()
 	{
@@ -14,8 +14,11 @@ public enum Role
 			return "Werewolf";
 		case WITCH:
 			return "Witch";
+		case HEALER:
+			return "Healer";
+		default:
+			return "unspecified";
 		}
-		return this.toString();
 
 	}
 }
